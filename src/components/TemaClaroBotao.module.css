@@ -1,0 +1,27 @@
+.toggle {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 40px;
+  height: 40px;
+  outline: none;
+}
+
+.toggle:hover {
+  background-color: var(--border);
+  transform: scale(1.1);
+}
+
+.placeholder {
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+}
