@@ -41,18 +41,18 @@ a {
 
 main {
   min-height: 100vh;
-  padding: 4rem 1rem;
+  padding: 64px 16px;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 h1, h2, h3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 p {
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 ul {

@@ -1,12 +1,12 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 32px;
+  margin-top: 32px;
 }
 
 .item {
-  padding-left: 1.5rem;
+  padding-left: 24px;
   border-left: 2px solid var(--border);
   position: relative;
 }
@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .header h3 {
@@ -34,13 +34,13 @@
 }
 
 .periodo {
-  font-size: 0.9rem;
+  font-size: 14.40px;
   color: var(--secondary);
   font-weight: 500;
 }
 
 .instituicao {
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   color: var(--foreground);
 }

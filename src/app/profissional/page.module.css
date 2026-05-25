@@ -1,13 +1,13 @@
 .experienceList {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 48px;
+  margin-top: 32px;
 }
 
 .experienceItem {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 2rem;
+  padding-bottom: 32px;
 }
 
 .experienceItem:last-child {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .header h3 {
@@ -27,22 +27,22 @@
 }
 
 .periodo {
-  font-size: 0.9rem;
+  font-size: 14.40px;
   color: var(--secondary);
   font-weight: 500;
 }
 
 .empresa {
   font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 17.60px;
+  margin-bottom: 16px;
 }
 
 .atividades {
   list-style: disc;
-  padding-left: 1.5rem;
+  padding-left: 24px;
 }
 
 .atividades li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }

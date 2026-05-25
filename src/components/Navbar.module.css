@@ -4,13 +4,13 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,18 +18,18 @@
 
 .logo {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 .navLinks {
   display: flex;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .navLinks a {
   color: var(--secondary);
   transition: color 0.2s;
-  font-size: 0.9rem;
+  font-size: 14.40px;
 }
 
 .navLinks a:hover {
