@@ -6,13 +6,22 @@ export default function Academico() {
       instituicao: "UNICAP (Universidade Católica de Pernambuco)",
       curso: "Graduação em Sistemas Para Internet",
       periodo: "Em curso (Conclusão 2027.1)",
-      descricao: "Foco no desenvolvimento de aplicações para web, design de interfaces e arquitetura de sistemas.",
+      descricao:
+        "Foco no desenvolvimento de aplicações para web, design de interfaces e arquitetura de sistemas.",
+    },
+    {
+      instituicao: "CESAR School (Programa Recife Resolve)",
+      curso: "Residência Tecnológica",
+      periodo: "Jul/2026 — Atual",
+      descricao:
+        "Programa de imersão focado em aprofundamento tecnológico, aprendizado prático e prototipação de soluções inovadoras.",
     },
     {
       instituicao: "Porto Digital",
       curso: "Residência Tecnológica",
       periodo: "Concluído / Em curso",
-      descricao: "Resolução de problemas reais através de desafios de inovação em parceria com empresas do ecossistema Porto Digital.",
+      descricao:
+        "Resolução de problemas reais através de desafios de inovação em parceria com empresas do ecossistema Porto Digital.",
     },
   ];
 
