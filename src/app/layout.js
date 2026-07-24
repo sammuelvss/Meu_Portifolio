@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundShader from "@/components/BackgroundShader";
 
 export const metadata = {
   title: "Meu Portfólio",

@@ -2,17 +2,44 @@ import styles from "./page.module.css";
 
 export default function Sobre() {
   const techs = [
-    { name: "Linguagens", description: "Java (Spring Boot), JavaScript (React), C++, Arduino, HTML5, CSS3." },
-    { name: "Ferramentas", description: "Git, GitHub, Figma, MySQL, Trello, Jira, Metodologias Ágeis." },
-    { name: "Idiomas", description: "Inglês Intermediário (B1) e Português Nativo." },
-    { name: "Soft Skills", description: "Proatividade, Resolução de problemas, Comunicação, Criatividade e Trabalho em equipe." },
+    {
+      name: "Linguagens e FrameWorks",
+      description:
+        "Java (Spring Boot), JavaScript (React), Python, C++, Arduino, HTML5, CSS3 (BootStrap, Tailwind).",
+    },
+    {
+      name: "Ferramentas e Conceitos",
+      description:
+        "Git, GitHub, Figma, MySQL, Trello, Jira, Metodologias Ágeis, Redes de Computadores, Pacote Office, Robótica.",
+    },
+    {
+      name: "Idiomas",
+      description: "Inglês Intermediário (B1) e Português Nativo.",
+    },
+    {
+      name: "Soft Skills",
+      description:
+        "Proatividade, Resolução de problemas, Comunicação, Criatividade, Pensamento Crítico e Trabalho em equipe.",
+    },
   ];
 
   const projectTechs = [
-    { name: "Next.js 14", description: "Framework utilizado para a estrutura e roteamento do site." },
-    { name: "React", description: "Biblioteca base para os componentes da interface." },
-    { name: "CSS Modules", description: "Utilizado para estilização moderna e isolada." },
-    { name: "GitHub API", description: "Integração dinâmica para exibir seus repositórios fixados." },
+    {
+      name: "Next.js 14",
+      description: "Framework utilizado para a estrutura e roteamento do site.",
+    },
+    {
+      name: "React",
+      description: "Biblioteca base para os componentes da interface.",
+    },
+    {
+      name: "CSS Modules",
+      description: "Utilizado para estilização moderna e isolada.",
+    },
+    {
+      name: "GitHub API",
+      description: "Integração dinâmica para exibir repositórios fixados.",
+    },
   ];
 
   return (
@@ -20,8 +47,9 @@ export default function Sobre() {
       <h1>Sobre Mim</h1>
       <section className={styles.section}>
         <p>
-          Sammuel Victor Santana de Souza. Atualmente graduando em Sistemas Para Internet pela UNICAP (conclusão 2027.1). 
-          Sou um desenvolvedor em busca de desafios que unam tecnologia, inovação e impacto real.
+          Sammuel Victor Santana de Souza. Atualmente graduando em Sistemas Para
+          Internet pela UNICAP (conclusão 2027.1). Sou um desenvolvedor em busca
+          de desafios que unam tecnologia, inovação e impacto real.
         </p>
       </section>
 

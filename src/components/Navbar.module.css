@@ -1,39 +1,62 @@
+/* --- REGRA GERAL COMPARTILHADA --- */
 .navbar {
-  border-bottom: 1px solid var(--border);
-  background-color: var(--background);
   position: sticky;
-  top: 0;
   z-index: 100;
+  background-color: var(--background);
+  transition: all 0.3s ease; /* Transição suave ao navegar entre as páginas */
+}
+
+/* --- ESTILO EXCLUSIVO DA HOME (Pílula Centralizada) --- */
+.navbarHome {
+  top: 24px;
+  border-radius: 50px;
+  width: fit-content;
+  max-width: 95vw;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border);
+}
+
+/* --- ESTILO EXCLUSIVO DAS OUTRAS PÁGINAS (Barra Fixa no Topo) --- */
+.navbarPages {
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
   padding: 16px 0;
 }
 
+/* --- CONTAINERS INTERNOS --- */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
+.homeContainer {
+  padding: 12px 32px;
+  justify-content: center; /* Mantém os links no centro da pílula */
+}
+
+.pagesContainer {
+  padding: 0 16px;
+}
+
+/* --- ESTILOS DE TEXTO --- */
 .logo {
-  font-weight: bold;
-  font-size: 24px;
+  font-size: 24px; 
+  font-weight: 700;
+  letter-spacing: -0.05em;
   white-space: nowrap;
+  color: var(--foreground);
+  text-decoration: none;
 }
 
 .navLinks {
   display: flex;
   gap: 24px;
-  flex-wrap: wrap;
-}
-
-.navContent {
-  display: flex;
   align-items: center;
-  gap: 32px;
   flex-wrap: wrap;
 }
 
@@ -45,4 +68,18 @@
 
 .navLinks a:hover {
   color: var(--foreground);
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 600px) {
+  /* Quando não for a Home, empilha a logo e os links */
+  .container:not(.homeContainer) {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .navLinks {
+    justify-content: center;
+    gap: 16px;
+  }
 }

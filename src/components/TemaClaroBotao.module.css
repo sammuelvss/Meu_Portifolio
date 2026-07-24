@@ -2,7 +2,6 @@
   background-color: var(--background);
   color: var(--foreground);
   border: 1px solid var(--border);
-  padding: 8px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
@@ -10,18 +9,21 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  width: 40px;
-  height: 40px;
+  
+  /* Aumentei levemente o tamanho para melhorar a área de toque no celular */
+  width: 48px; 
+  height: 48px;
   outline: none;
+
+  /* --- BOTÃO FLUTUANTE --- */
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra minimalista */
 }
 
 .toggle:hover {
   background-color: var(--border);
   transform: scale(1.1);
-}
-
-.placeholder {
-  width: 40px;
-  height: 40px;
-  border: 1px solid transparent;
 }

@@ -3,11 +3,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Adicionado padding para o texto nunca encostar nas bordas da tela no celular */
+  padding: 0 24px; 
+
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
   text-align: center;
   max-width: 800px;
+  /* Garante que a seção não ultrapasse o padding do pai */
+  width: 100%; 
 }
 
 .title {
@@ -23,53 +30,128 @@
   margin-bottom: 40px;
 }
 
+.contactInfo {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row; /* Força os itens a ficarem lado a lado no desktop */
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14.40px;
+  color: var(--secondary);
+  flex-wrap: wrap;
+}
+
+/* Remove a margem padrão do <p> que quebra o layout e alinha o texto perfeitamente */
+.contactInfo p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+/* ... resto do seu CSS (main, hero, title, description, cta) ... */
+
 .cta {
   display: flex;
   gap: 16px;
   justify-content: center;
 }
 
-.primaryButton {
-  background-color: var(--foreground);
-  color: var(--background);
-  padding: 12.80px 32px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
+/* =========================================
+   LIQUID GLASS STYLES
+   ========================================= */
 
-.primaryButton:hover {
-  opacity: 0.9;
-}
-
-.secondaryButton {
-  border: 1px solid var(--border);
-  padding: 12.80px 32px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background-color 0.2s;
-}
-
-.secondaryButton:hover {
-  background-color: var(--border);
-}
-
-.contactInfo {
-  margin-top: 48px;
+.liquidGlassWrapper {
+  position: relative;
   display: flex;
-  gap: 32px;
+  align-items: center;
   justify-content: center;
-  font-size: 14.40px;
-  color: var(--secondary);
-  flex-wrap: wrap;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 12.8px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* Sombras que dão volume à "bolha" de vidro */
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
+.liquidGlassWrapper:hover {
+  transform: scale(1.05); /* Dá um efeito elástico ao passar o mouse */
+}
+
+.liquidGlassEffect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  
+  /* O Desfoque + O Filtro SVG */
+  backdrop-filter: blur(6px);
+  filter: url(#glass-distortion);
+}
+
+.liquidGlassTint {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+/* Variação de cor para o botão principal */
+.tintPrimary {
+  background: rgba(255, 255, 255, 0.403);
+}
+
+/* Variação de cor neutra para o botão secundário */
+.tintSecondary {
+  background: rgba(255, 255, 255, 0.08); 
+}
+
+.liquidGlassShine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  pointer-events: none;
+  
+  /* As bordas brilhantes internas características do vidro */
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.2),
+              inset -1px -1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.liquidGlassText {
+  z-index: 3;
+  font-size: 16px;
+  color: var(--foreground);
+}
+
+/* ... resto do seu CSS (contactInfo) ... */
+
+/* --- AJUSTES PARA MOBILE --- */
 @media (max-width: 600px) {
   .title {
-    font-size: 40px;
+    font-size: 36px; 
+  }
+
+  .description {
+    font-size: 16px; 
   }
   
   .cta {
     flex-direction: column;
+    width: 100%; 
+  }
+
+  .liquidGlassWrapper {
+    width: 100%; /* Expande o vidro líquido no celular */
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
   }
 }
+  
