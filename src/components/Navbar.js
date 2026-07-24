@@ -44,6 +44,9 @@ export default function Navbar() {
           <li>
             <Link href="/projetos">Projetos</Link>
           </li>
+          <li>
+            <Link href="/contato">Contato</Link>
+          </li>
         </ul>
 
         <TemaClaroBotao />

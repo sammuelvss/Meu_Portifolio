@@ -72,14 +72,40 @@
 
 /* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 600px) {
-  /* Quando não for a Home, empilha a logo e os links */
+  /* Se não for a Home, empilha a logo e o menu */
   .container:not(.homeContainer) {
     flex-direction: column;
     gap: 16px;
   }
-  
+
+  /* Ajusta o espaço interno da pílula na Home para não ficar espremida */
+  .homeContainer {
+    padding: 12px 16px;
+  }
+
+  /* Transforma os links em uma linha deslizável (swipe) */
   .navLinks {
-    justify-content: center;
-    gap: 16px;
+    flex-wrap: nowrap; /* Proíbe a quebra de linha */
+    overflow-x: auto; /* Adiciona rolagem horizontal */
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    
+    /* Cria um pequeno respiro no final do scroll */
+    padding-right: 8px; 
+
+    /* Esconde a barra de rolagem nativa para manter o visual limpo */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Esconde a barra de rolagem no Chrome/Safari/Edge */
+  .navLinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLinks a {
+    white-space: nowrap; /* Garante que palavras como "Acadêmico" não quebrem ao meio */
+    font-size: 14px; /* Reduz levemente a fonte no celular */
   }
 }

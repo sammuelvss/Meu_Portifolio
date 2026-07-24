@@ -18,14 +18,14 @@ export default function Home() {
           </p>
 
           <div className={styles.cta}>
-            {/* BOTÃO 1 - PRIMÁRIO */}
-            <Link href="/projetos" className={styles.liquidGlassWrapper}>
+            {/* BOTÃO MUDADO PARA CONTATO */}
+            <Link href="/contato" className={styles.liquidGlassWrapper}>
               <div className={styles.liquidGlassEffect}></div>
               <div
                 className={`${styles.liquidGlassTint} ${styles.tintPrimary}`}
               ></div>
               <div className={styles.liquidGlassShine}></div>
-              <span className={styles.liquidGlassText}>Ver Projetos</span>
+              <span className={styles.liquidGlassText}>Contato</span>
             </Link>
 
             {/* BOTÃO 2 - SECUNDÁRIO */}
@@ -41,11 +41,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className={styles.contactInfo}>
+          {/*<div className={styles.contactInfo}>
             <p> Recife, PE</p>
             <p> sammuelvictor7@gmail.com</p>
             <p> (81) 99937-3658</p>
-          </div>
+          </div>*/}
         </section>
 
         {/* --- FILTRO SVG INVISÍVEL PARA O EFEITO LÍQUIDO --- */}
