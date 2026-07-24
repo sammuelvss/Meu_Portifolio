@@ -19,7 +19,7 @@ export default function Academico() {
     {
       instituicao: "Porto Digital",
       curso: "Residência Tecnológica",
-      periodo: "Concluído / Em curso",
+      periodo: "Em curso",
       descricao:
         "Resolução de problemas reais através de desafios de inovação em parceria com empresas do ecossistema Porto Digital.",
     },
