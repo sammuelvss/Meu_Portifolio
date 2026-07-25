@@ -1,42 +1,44 @@
 /* --- REGRA GERAL COMPARTILHADA --- */
 .navbar {
-  position: sticky;
+  position: fixed; /* <-- A mágica definitiva: prende na tela do navegador */
   z-index: 100;
-  transition: all 0.3s ease;
+  
+  /* Esse combo de left e right é o truque para centralizar um elemento fixed! */
+  left: 0;
+  right: 0; 
 }
 
 /* --- ESTILO EXCLUSIVO DA HOME (Pílula com Vidro Líquido) --- */
-/* --- ESTILO EXCLUSIVO DA HOME (Pílula com Vidro Líquido) --- */
 .navbarHome {
-  position: sticky; /* <-- Isso devolve o poder de grudar na tela ao rolar */
   top: 24px;
   border-radius: 50px;
   width: fit-content;
   max-width: 95vw;
-  margin: 0 auto;
+  margin: 0 auto; /* Junto com o left e right acima, a pílula fica perfeitamente no meio */
   overflow: hidden; 
   background-color: transparent; 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   
-  /* Deixa a animação do hover macia */
   transition: top 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* NOVO: Efeito ao passar o mouse na Navbar da Home */
+/* Efeito ao passar o mouse */
 .navbarHome:hover {
-  top: 21px; /* Faz a barra dar uma leve flutuada para cima */
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3); /* A sombra fica mais difusa e profunda */
-  border-color: rgba(255, 255, 255, 0.3); /* A borda de vidro ganha mais destaque */
+  top: 21px; 
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3); 
+  border-color: rgba(255, 255, 255, 0.3); 
 }
 
 /* --- ESTILO EXCLUSIVO DAS OUTRAS PÁGINAS (Barra Fixa no Topo) --- */
 .navbarPages {
   top: 0;
   width: 100%;
-  background-color: var(--background); /* Cor sólida volta nas páginas internas */
+  background-color: var(--background); 
   border-bottom: 1px solid var(--border);
   padding: 16px 0;
+  
+  transition: all 0.3s ease;
 }
 
 /* --- EFEITOS DO VIDRO LÍQUIDO --- */
