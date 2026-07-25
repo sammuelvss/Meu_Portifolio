@@ -116,6 +116,11 @@
   color: var(--foreground);
 }
 
+.navbarSpacer {
+  height: 80px; /* Compensa a altura média da barra no computador */
+  width: 100%;
+}
+
 /* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 600px) {
   .container:not(.homeContainer) {
@@ -123,6 +128,9 @@
     gap: 16px;
   }
   
+  .navbarSpacer {
+    height: 120px; /* Aumenta o espaço no celular por conta da barra ser mais alta */
+  }
   .homeContainer {
     padding: 12px 16px;
   }

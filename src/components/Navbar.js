@@ -15,47 +15,53 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   return (
-    <nav
-      className={`${styles.navbar} ${isHome ? styles.navbarHome : styles.navbarPages}`}
-    >
-      {isHome && (
-        <>
-          <div className={styles.liquidGlassEffect}></div>
-          <div className={styles.liquidGlassTint}></div>
-          <div className={styles.liquidGlassShine}></div>
-        </>
-      )}
-
-      <div
-        className={`${styles.container} ${isHome ? styles.homeContainer : styles.pagesContainer}`}
+    <>
+      <nav
+        className={`${styles.navbar} ${isHome ? styles.navbarHome : styles.navbarPages}`}
       >
-        {!isHome && (
-          <Link href="/" className={`${styles.logo} ${spaceMono.className}`}>
-            Sammuel Victor
-          </Link>
+        {isHome && (
+          <>
+            <div className={styles.liquidGlassEffect}></div>
+            <div className={styles.liquidGlassTint}></div>
+            <div className={styles.liquidGlassShine}></div>
+          </>
         )}
 
-        <ul className={styles.navLinks}>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/sobre">Sobre</Link>
-          </li>
-          <li>
-            <Link href="/academico">Acadêmico</Link>
-          </li>
-          <li>
-            <Link href="/profissional">Profissional</Link>
-          </li>
-          <li>
-            <Link href="/projetos">Projetos</Link>
-          </li>
-          <li>
-            <Link href="/contato">Contato</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <div
+          className={`${styles.container} ${isHome ? styles.homeContainer : styles.pagesContainer}`}
+        >
+          {!isHome && (
+            <Link href="/" className={`${styles.logo} ${spaceMono.className}`}>
+              Sammuel Victor
+            </Link>
+          )}
+
+          <ul className={styles.navLinks}>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/sobre">Sobre</Link>
+            </li>
+            <li>
+              <Link href="/academico">Acadêmico</Link>
+            </li>
+            <li>
+              <Link href="/profissional">Profissional</Link>
+            </li>
+            <li>
+              <Link href="/projetos">Projetos</Link>
+            </li>
+            <li>
+              <Link href="/contato">Contato</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* --- ESPAÇADOR FANTASMA --- */}
+      {/* Só aparece se NÃO for a página inicial */}
+      {!isHome && <div className={styles.navbarSpacer}></div>}
+    </>
   );
 }

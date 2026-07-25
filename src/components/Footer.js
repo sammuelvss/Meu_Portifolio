@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="https://github.com/sammuelvss" className={styles.link}>
             Sammuel Victor
           </a>
-          . Desenvolvido com Next.js.
+          .
         </p>
       </div>
     </footer>
