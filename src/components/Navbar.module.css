@@ -2,27 +2,69 @@
 .navbar {
   position: sticky;
   z-index: 100;
-  background-color: var(--background);
-  transition: all 0.3s ease; /* Transição suave ao navegar entre as páginas */
+  transition: all 0.3s ease;
 }
 
-/* --- ESTILO EXCLUSIVO DA HOME (Pílula Centralizada) --- */
+/* --- ESTILO EXCLUSIVO DA HOME (Pílula com Vidro Líquido) --- */
+/* --- ESTILO EXCLUSIVO DA HOME (Pílula com Vidro Líquido) --- */
 .navbarHome {
+  position: sticky; /* <-- Isso devolve o poder de grudar na tela ao rolar */
   top: 24px;
   border-radius: 50px;
   width: fit-content;
   max-width: 95vw;
   margin: 0 auto;
+  overflow: hidden; 
+  background-color: transparent; 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Deixa a animação do hover macia */
+  transition: top 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* NOVO: Efeito ao passar o mouse na Navbar da Home */
+.navbarHome:hover {
+  top: 21px; /* Faz a barra dar uma leve flutuada para cima */
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3); /* A sombra fica mais difusa e profunda */
+  border-color: rgba(255, 255, 255, 0.3); /* A borda de vidro ganha mais destaque */
 }
 
 /* --- ESTILO EXCLUSIVO DAS OUTRAS PÁGINAS (Barra Fixa no Topo) --- */
 .navbarPages {
   top: 0;
   width: 100%;
+  background-color: var(--background); /* Cor sólida volta nas páginas internas */
   border-bottom: 1px solid var(--border);
   padding: 16px 0;
+}
+
+/* --- EFEITOS DO VIDRO LÍQUIDO --- */
+.liquidGlassEffect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  backdrop-filter: blur(6px);
+  filter: url(#glass-distortion);
+}
+
+.liquidGlassTint {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.05); /* Camada de cor bem sutil */
+}
+
+.liquidGlassShine {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.2),
+              inset -1px -1px 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 /* --- CONTAINERS INTERNOS --- */
@@ -32,11 +74,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 3; /* Mantém os links e a logo sempre acima do vidro */
 }
 
 .homeContainer {
   padding: 12px 32px;
-  justify-content: center; /* Mantém os links no centro da pílula */
+  justify-content: center;
 }
 
 .pagesContainer {
@@ -72,40 +116,32 @@
 
 /* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 600px) {
-  /* Se não for a Home, empilha a logo e o menu */
   .container:not(.homeContainer) {
     flex-direction: column;
     gap: 16px;
   }
-
-  /* Ajusta o espaço interno da pílula na Home para não ficar espremida */
+  
   .homeContainer {
     padding: 12px 16px;
   }
 
-  /* Transforma os links em uma linha deslizável (swipe) */
   .navLinks {
-    flex-wrap: nowrap; /* Proíbe a quebra de linha */
-    overflow-x: auto; /* Adiciona rolagem horizontal */
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: flex-start;
     gap: 20px;
     width: 100%;
-    
-    /* Cria um pequeno respiro no final do scroll */
     padding-right: 8px; 
-
-    /* Esconde a barra de rolagem nativa para manter o visual limpo */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
 
-  /* Esconde a barra de rolagem no Chrome/Safari/Edge */
   .navLinks::-webkit-scrollbar {
     display: none;
   }
 
   .navLinks a {
-    white-space: nowrap; /* Garante que palavras como "Acadêmico" não quebrem ao meio */
-    font-size: 14px; /* Reduz levemente a fonte no celular */
+    white-space: nowrap;
+    font-size: 14px; 
   }
 }

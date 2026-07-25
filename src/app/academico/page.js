@@ -14,7 +14,7 @@ export default function Academico() {
       curso: "Residência Tecnológica",
       periodo: "Jul/2026 — Atual",
       descricao:
-        "Programa de imersão focado em aprofundamento tecnológico, aprendizado prático e prototipação de soluções inovadoras.",
+        "Programa de imersão em Parceria com a CESAR, Prefeitura do Recife e UK in Brazil, focado em aprofundamento tecnológico, aprendizado prático e prototipação de soluções inovadoras.",
     },
     {
       instituicao: "Porto Digital",

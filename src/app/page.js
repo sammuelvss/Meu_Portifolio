@@ -1,12 +1,12 @@
 import styles from "./page.module.css";
 import Link from "next/link";
-import BackgroundShader from "@/components/BackgroundShader";
+import ParticleField from "@/components/ParticleField"; // <-- Nova importação
 
 export default function Home() {
   return (
     <>
-      <BackgroundShader />
-
+      <ParticleField />{" "}
+      {/* <-- Substituindo a bolha pelo campo de partículas */}
       <main className={styles.main}>
         <section className={styles.hero}>
           <h1 className={styles.title}>Olá, eu sou Sammuel Victor</h1>
@@ -18,7 +18,6 @@ export default function Home() {
           </p>
 
           <div className={styles.cta}>
-            {/* BOTÃO MUDADO PARA CONTATO */}
             <Link href="/contato" className={styles.liquidGlassWrapper}>
               <div className={styles.liquidGlassEffect}></div>
               <div
@@ -28,7 +27,6 @@ export default function Home() {
               <span className={styles.liquidGlassText}>Contato</span>
             </Link>
 
-            {/* BOTÃO 2 - SECUNDÁRIO */}
             <Link href="/sobre" className={styles.liquidGlassWrapper}>
               <div className={styles.liquidGlassEffect}></div>
               <div
@@ -40,37 +38,7 @@ export default function Home() {
               </span>
             </Link>
           </div>
-
-          {/*<div className={styles.contactInfo}>
-            <p> Recife, PE</p>
-            <p> sammuelvictor7@gmail.com</p>
-            <p> (81) 99937-3658</p>
-          </div>*/}
         </section>
-
-        {/* --- FILTRO SVG INVISÍVEL PARA O EFEITO LÍQUIDO --- */}
-        <svg
-          style={{ width: 0, height: 0, position: "absolute" }}
-          aria-hidden="true"
-          focusable="false"
-        >
-          <filter id="glass-distortion">
-            {/* Cria a textura orgânica que causa a distorção do fundo */}
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.02"
-              numOctaves="2"
-              result="noise"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="8"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </svg>
       </main>
     </>
   );

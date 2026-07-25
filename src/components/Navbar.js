@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Space_Mono } from "next/font/google";
 import styles from "./Navbar.module.css";
-import TemaClaroBotao from "./TemaClaroBotao";
 
 const spaceMono = Space_Mono({
   weight: ["400", "700"],
@@ -19,6 +18,14 @@ export default function Navbar() {
     <nav
       className={`${styles.navbar} ${isHome ? styles.navbarHome : styles.navbarPages}`}
     >
+      {isHome && (
+        <>
+          <div className={styles.liquidGlassEffect}></div>
+          <div className={styles.liquidGlassTint}></div>
+          <div className={styles.liquidGlassShine}></div>
+        </>
+      )}
+
       <div
         className={`${styles.container} ${isHome ? styles.homeContainer : styles.pagesContainer}`}
       >
@@ -48,8 +55,6 @@ export default function Navbar() {
             <Link href="/contato">Contato</Link>
           </li>
         </ul>
-
-        <TemaClaroBotao />
       </div>
     </nav>
   );
